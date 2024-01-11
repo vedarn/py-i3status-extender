@@ -6,6 +6,10 @@
 # open this can complicate jq expression nedded to get window name.
 # It will be like this until I manage to get jq working.
 
-W_TITLE=$(swaymsg -t get_tree | grep "\"focused\": true" -A 30 | grep name)
+if [ "${XDG_CURRENT_DESKTOP}" = "i3" ]; then
+    W_TITLE=$(i3-msg -t get_tree | jq | grep -A 35 "\"focused\": true" | grep name)
+else
+    W_TITLE=$(swaymsg -t get_tree | grep -A 30 "\"focused\": true" | grep name)
+fi
 
 echo ${W_TITLE::-2} | cut -c10-
