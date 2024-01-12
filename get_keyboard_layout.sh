@@ -5,7 +5,7 @@
 # This is very hacky way to get current KB layout, but it seems to be some of the most reliable ones.
 # These values are for 'English (US)' and 'Bulgarian (traditional phonetic)' keyboard layouts.
 # You should find yours and add them here.
-if [ "${XDG_CURRENT_DESKTOP}" = "i3" ]; then
+if [ "${XDG_SESSION_DESKTOP}" = "i3" ]; then
     LED_MASK=$(xset -q | grep LED | awk '{print $10}')
     if [ "${LED_MASK}" = "00000000" ] || [ "${LED_MASK}" = "00000001" ] || [ "${LED_MASK}" = "00000002" ] || [ "${LED_MASK}" = "00000002" ]; then
         KB_LAYOUT="🇺🇸"
