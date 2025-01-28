@@ -7,10 +7,14 @@
 # You should find yours and add them here.
 if [ "${XDG_SESSION_DESKTOP}" = "i3" ]; then
     LED_MASK=$(xset -q | grep LED | awk '{print $10}')
-    if [ "${LED_MASK}" = "00000000" ] || [ "${LED_MASK}" = "00000001" ] || [ "${LED_MASK}" = "00000002" ] || [ "${LED_MASK}" = "00000002" ]; then
+
+    LED_MASK_US=" 00000000 00000001 00000002 "
+    if [[ " ${LED_MASK_US} " =~ " ${LEDMASK} " ]]; then
         KB_LAYOUT="🇺🇸"
     fi
-    if [ "${LED_MASK}" = "00001004" ] || [ "${LED_MASK}" = "00001005" ] || [ "${LED_MASK}" = "00001006" ] || [ "${LED_MASK}" = "00001007" ]; then
+
+    LED_MASK_BG=" 00001000 00001004 00001005 00001006 00001007 "
+    if [[ " ${LED_MASK_BG} " =~ " ${LED_MASK} " ]]; then
         KB_LAYOUT="🇧🇬"
     fi
 else
