@@ -2,9 +2,9 @@
 Simple extender for i3status status line in python
 
 ## Overview
-The main reason for creating this small bunch of scripts was to keep the functionality I already had in i3wm when decided to migrate to swaywm keeping i3status at the same time. I was using additional application for displaying window title in i3status which updates the status bar when window focus was changed. Similar to other tiling WMs.
+The main reason for creating this small bunch of scripts was to keep the functionality I already had in i3wm when decided to migrate to swaywm keeping i3status at the same time. I was using additional application for displaying window title in i3status which updates the status bar when window focus changes. Similar to other tiling WMs.
 
-In the end I manage to get these scripts working on both i3wm and swaywm.
+In the end I managed to get the scripts working on both i3wm and swaywm.
 
 ## Short summary on script usage
 
